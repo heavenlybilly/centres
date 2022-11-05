@@ -1,0 +1,115 @@
+.grid {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+}
+
+// мобилка и планшет
+.grid {
+    grid-template-rows:
+            [nav] auto
+            [main-card] auto
+            [contents] auto
+            [article] auto
+            [similar] auto
+            [subscript] auto
+            [popular] auto
+            [interest] auto;
+}
+
+.main {
+    display: block;
+}
+.sidebar {
+    display: block;
+}
+nav {
+    grid-row: nav;
+    order: 0;
+}
+.main__card {
+    grid-row: main-card;
+    order: 1;
+}
+.contents {
+    grid-row: span contents;
+    order: 2;
+}
+.article {
+    grid-row: span article;
+    order: 3;
+}
+.popular {
+    grid-row: popular;
+    order: 4;
+}
+.similar {
+    grid-row: similar;
+}
+.subscript {
+    grid-row: subscript;
+}
+.interest {
+    grid-row: interest;
+}
+
+// декстоп
+@include media-breakpoint-up($lg) {
+    .grid {
+        grid-template-columns:
+                [main] 8fr
+                1fr
+                [sidebar] 4fr;
+
+        grid-template-rows:
+                [nav] auto
+                [main-card] auto
+                [article] auto
+                [similar] auto;
+
+    }
+
+    nav {
+        grid-row: nav;
+        grid-column: 1 / -1;
+    }
+
+    .main__card {
+        grid-row: main-card;
+        grid-column: main;
+    }
+
+    .article {
+        grid-row: article;
+        grid-column: main;
+    }
+
+    .similar {
+        grid-row: similar;
+        grid-column: 1 / -1;
+    }
+
+
+    .contents {
+        grid-row: main-card;
+        grid-column: sidebar;
+    }
+
+    .popular {
+        margin-top: -5vw;
+        grid-row: article ;
+        grid-column: sidebar;
+    }
+
+    .interest {
+        margin-top: 70vh;
+        grid-row: article;
+        grid-column: sidebar;
+    }
+
+    .subscript {
+        display: none;
+    }
+
+
+}

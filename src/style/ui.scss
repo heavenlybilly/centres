@@ -1,0 +1,13 @@
+.button {
+    @include button;
+    color: $white;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    background-color: $orange;
+
+    &:hover {
+        background-color: $orange-dark;
+        color: $white;
+        cursor: default;
+    }
+}

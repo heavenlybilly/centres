@@ -47,9 +47,15 @@ a {
             'opsz' 20;
 }
 
+
+@import "ui";
+
 // блоки
 @import "blocks/nav";
 @import "blocks/main-card";
 @import "blocks/article";
 @import "blocks/contents";
 @import "blocks/popular";
+@import "blocks/interest";
+
+@import "grid";

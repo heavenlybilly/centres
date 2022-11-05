@@ -1,0 +1,59 @@
+.interest {
+    margin-top: 4.5rem;
+    background-color: $white;
+    padding: 2rem;
+    width: 100%;
+
+    box-shadow: 0px 0px 50px rgba(139, 139, 139, 0.25);
+}
+
+.interest h3 {
+    @include header-2;
+    color: $accent;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+.interest-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+// контейнер тегов
+.interest-tags {
+    margin-top: 1.5rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        padding: 1px;
+        background-color: $accent;
+        @include text-articles;
+        color: $white;
+        //border: 1px solid $accent;
+    }
+
+    p {
+        padding: 0.5rem;
+    }
+
+    span {
+        @include text-small;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.5rem;
+        background-color: $white;
+        color: $black;
+
+        i {
+            color: $orange;
+        }
+    }
+}
