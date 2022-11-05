@@ -1,0 +1,196 @@
+.popular {
+    margin-top: 4.5rem;
+    padding: 2rem 0 2.9rem 0;
+
+    @include media-breakpoint-up($lg) {
+        margin-top: -5rem;
+        padding: 2rem 1.56rem 2.9rem 1.56rem;
+        background-color: $white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+// заголовок
+.popular h3 {
+    @include header-2;
+    font-family: 'Inter';
+    color: $accent;
+    text-transform: uppercase;
+    text-align: left;
+
+    @include media-breakpoint-up($lg) {
+        text-align: center;
+    }
+}
+
+// carousel
+.popular .carousel {
+    padding-top: 1.5rem;
+}
+
+// vendor
+.popular {
+    position: relative;
+
+    // static чтобы все абсолютные элдементы позиционировались относительно .popular
+    .carousel, .carousel__nav {
+        position: static;
+    }
+
+    // страница
+    .carousel__slide {
+        padding: 0;
+    }
+
+    // точки
+    .carousel__dots {
+        position: absolute;
+        right: inherit;
+        top: inherit;
+        bottom: 1.0rem;
+        left: 1.5rem;
+
+        display: flex;
+        gap: 0.5rem;
+        justify-content: start;
+
+        .is-selected:after {
+            background-color: $orange;
+            width: 0.625rem;
+            height: 0.625rem;
+        }
+        .carousel__dot {
+            max-width: 0.625rem;
+        }
+        .carousel__dot:after {
+            background-color: $orange-light;
+            min-width: 0.5rem;
+            min-height: 0.5rem;
+        }
+    }
+
+    // скрыть кнопки
+    .carousel__nav {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 6.88rem;
+        height: 3.44rem;
+        margin-right: -1px;
+    }
+
+    .carousel__button {
+        width: 3.44rem;
+        height: 3.44rem;
+        border-radius: 0;
+    }
+
+    .is-next {
+        background-color: $orange;
+        right: 0;
+    }
+
+    .is-prev {
+        background-color: $orange-light;
+        left: 0;
+    }
+
+    .carousel__track > .carousel__slide {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+/* GRID */
+.popular .popular-item {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+
+    margin-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid $accent;
+
+    img {
+        grid-area: img;
+        align-self: start;
+        width: 100%;
+    }
+
+    h4 {
+        grid-area: title;
+        align-self: start;
+        @include header-4;
+        font-family: 'Inter';
+        line-height: 1.4rem!important;
+    }
+
+    p {
+        grid-area: text;
+        align-self: start;
+        @include text-articles;
+    }
+
+    time {
+        grid-area: time;
+        align-self: start;
+
+        @include text-small;
+        color: $grey;
+    }
+
+    a {
+        grid-area: link;
+        align-self: start;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 0.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        color: $orange;
+    }
+
+    grid-template-columns: 4.75rem;
+    grid-template-areas:
+        "img title"
+        "img time"
+        "img link";
+
+    a {
+        justify-content: start;
+    }
+    p {
+        display: none;
+    }
+
+    @include media-breakpoint-up($md) {
+        grid-template-columns: 11.8rem;
+        grid-template-areas:
+            "img title"
+            "img time"
+            "img text"
+            "img link";
+
+        p {
+            display: inherit;
+        }
+    }
+
+    @include media-breakpoint-up($lg) {
+        grid-template-columns: 4.75rem;
+        grid-template-areas:
+            "img title title"
+            "img time  link";
+
+        p {
+            display: none;
+        }
+        a {
+            justify-content: end;
+        }
+    }
+}

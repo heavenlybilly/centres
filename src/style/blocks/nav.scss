@@ -1,0 +1,148 @@
+/* -------- НАВИГАЦИЯ: хлебные крошки -------- */
+
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-top: 10vh;
+
+    /* выпадает аункт меню */
+    @include media-breakpoint-up(482px) {
+        margin-top: 18vh;
+    }
+
+    @include media-breakpoint-up(494px) {
+        margin-top: 15vh;
+    }
+
+    @include media-breakpoint-up($md) {
+        margin-top: 9vh;
+    }
+
+    /* вырадает адрес и контакты в хедере */
+    @include media-breakpoint-up(822px) {
+        margin-top: 13vh;
+    }
+
+    @include media-breakpoint-up($lg) {
+        margin-top: 10vh;
+    }
+}
+
+/* элементы навигации, общие стили */
+.breadcrumb li {
+    margin-top: 1vh;
+    margin-right: 0.31rem;
+
+    a {
+        color: $grey;
+    }
+
+    @include media-breakpoint-up($lg) {
+        margin-right: 0;
+        padding: 0.93rem 1.5rem 0.93rem 1.5rem;
+        background-color: $white;
+
+        &:hover {
+            cursor: pointer;
+
+            a {
+                color: $black;
+            }
+        }
+    }
+}
+.breadcrumb li:last-child {
+    background: transparent;
+
+    a {
+        color: $accent;
+    }
+
+    @include media-breakpoint-up($lg)  {
+        background-color: $accent;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+.breadcrumb a {
+    @include text;
+    // а цвета текста описаны выше через селектор li
+}
+
+/* разделители */
+/* все кроме двух последних */
+.breadcrumb li:not(:last-child):not(:nth-last-child(2)) {
+    // градиент
+    @include media-breakpoint-up($lg) {
+        background: $white;
+        background: linear-gradient(-121deg, $white 11px, $border-color 11px, $border-color 12.5px, transparent 13px, $white 13px);
+
+        border-right: 2px solid $border-color;
+    }
+}
+
+/* все кроме первого */
+.breadcrumb li:not(:first-child) {
+    /* костыль с calc */
+    @include media-breakpoint-down(calc($lg - 1px)) {
+        &:before {
+            margin: 0 8px 1px 0;
+            content: '';
+            height: 8px;
+            width: 8px;
+            border: solid $grey;
+            display: inline-block;
+            border-width: 0 1px 1px 0;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+/* все кроме первого и последнего */
+.breadcrumb li:not(:last-child):not(:first-child) {
+
+    // треугольник в левом верхнем углу
+    @include media-breakpoint-up($lg) {
+        position: relative;
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            left: -14.8px;
+            top: 0;
+            content: '';
+            max-width: 0;
+            max-height: 0;
+            border-style: solid;
+            border-width: 0 15px 25px 0;
+            border-color: transparent $white transparent transparent;
+
+        }
+    }
+}
+
+/* последний */
+.breadcrumb li:last-child {
+
+    @include media-breakpoint-up($lg) {
+        position: relative;
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            left: -14.8px;
+            top: 0;
+            content: '';
+            max-width: 0;
+            max-height: 0;
+            border-style: solid;
+            border-width: 0 15px 25px 0;
+            border-color: transparent $accent transparent transparent;
+
+        }
+    }
+}

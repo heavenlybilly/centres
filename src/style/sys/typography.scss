@@ -1,0 +1,210 @@
+$maxWidth: 2050;
+@mixin adaptive-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+
+
+// ------------------------ DEFAULT TEXT
+/*
+ - хлебные крошки
+ - элементы списка содержания
+ */
+@mixin text() {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    // adaptive
+    line-height: 1.375rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.5rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+        line-height: 1.75rem;
+    }
+
+    @include adaptive-font(18, 14);
+}
+
+/*
+ - текст статей
+*/
+@mixin text-articles() {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    // adaptive
+    line-height: 1.375rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.5rem;
+    }
+
+    @include adaptive-font(16, 14);
+}
+
+/*
+ - подписи под главной карточкой
+ - подписи картинок
+*/
+@mixin text-small() {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    // adaptive
+    line-height: 1.25rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.35rem;
+    }
+
+    @include adaptive-font(14, 12);
+}
+
+/*
+ - теги на главной карточке
+*/
+@mixin text-tag() {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    // adaptive
+    line-height: 1.25rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.5rem;
+    }
+
+    @include adaptive-font(16, 12);
+}
+
+
+
+// ------------------------ HEADERS
+/*
+ - заголовок
+ */
+@mixin header-1 {
+    font-family: 'Tenor Sans';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    // adaptive
+    line-height: 2rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 3.125rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+        line-height: 3.125rem;
+    }
+
+    @include adaptive-font(40, 24);
+}
+
+/*
+ - заголовок содержания
+ - заголовки блоков статей
+ */
+@mixin header-2 {
+    font-family: 'Tenor Sans';
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    // adaptive
+    line-height: 1.625rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 2.125rem;
+        letter-spacing: 0.02em;
+    }
+
+    @include adaptive-font(26, 18);
+}
+
+
+/*
+ - подзаголовки блоков статей
+*/
+@mixin header-3 {
+    font-family: 'Tenor Sans';
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    // adaptive
+    line-height: 1.5rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.625rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+        line-height: 1.875rem;
+    }
+
+    @include adaptive-font(22, 16);
+}
+
+
+/*
+ - заголовки в карточках
+ - активный элемент списка содержания
+*/
+@mixin header-4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+
+    // adaptive
+    line-height: 1.375rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.5rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+        line-height: 1.75rem;
+    }
+
+    @include adaptive-font(18, 14);
+}
+
+
+
+// ---------------- BUTTONS
+/*
+ - подпись на главной карточке
+*/
+@mixin button {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    // adaptive
+    line-height: 1.375rem;
+
+    @include media-breakpoint-up($md) {
+        line-height: 1.5rem;
+        font-weight: 500;
+    }
+    //
+    //@include media-breakpoint-up($lg) {
+    //    line-height: 1.75rem;
+    //}
+
+    @include adaptive-font(16, 14);
+}

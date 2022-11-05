@@ -1,0 +1,120 @@
+/* СОЖЕРЖАНИЕ + общие стили */
+.contents {
+    margin-top: 6vh;
+    max-width: 100%;
+
+    @include media-breakpoint-up($lg) {
+        margin-top: 0;
+    }
+
+    li {
+        display: block;
+        @include text;
+    }
+
+    // номера
+    li:before {
+        //margin-right: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        color: $accent;
+        text-decoration: underline;
+    }
+    li[class="active"] {
+        @include header-4;
+
+        &:before {
+            color: $white;
+            background-color: $accent;
+        }
+    }
+    li:hover {
+        cursor: pointer;
+
+        &:before {
+            color: $black;
+        }
+    }
+}
+
+/* заголовок содержания */
+.contents h3 {
+    margin-bottom: 2rem;
+
+    @include header-2;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    color: $accent;
+}
+
+
+/* отступы */
+.contents ul[data-type="root"] {
+    /* общий отступ списка */
+    padding-left: 0;
+
+    /* отступ текста от края списка */
+    li {
+        position: relative;
+        padding-left: 3rem;
+    }
+    ul > li {
+        padding-left: 3.5rem;
+    }
+
+    /* положение маркеров */
+    li:before {
+        position: absolute;
+        left: 0;
+        top: -0.35rem;
+    }
+
+    /* взаимное расположение элементов списка по вертикали */
+    li + li, ul > li:first-child {
+        margin-top: 0.6rem;
+    }
+
+    /* отступы подсписков */
+    ul {
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
+
+
+/* нумерация */
+.contents {
+    ul {
+        counter-reset: item;
+    }
+    ul>li:before {
+        content: counters(item, ".");
+        counter-increment: item
+    }
+    ul>li ul li:before {
+        content: counters(item, ".");
+        counter-increment: item
+    }
+}
+
+/* фиксированное содержание при прокручивании */
+.contents[data-scroll="1"] {
+    @include media-breakpoint-up($lg) {
+        /* общий отступ списка */
+        padding-left: 1rem;
+
+        position: relative;
+        width: 100%;
+
+        ul[data-type="root"] {
+            z-index: 1000;
+            padding: 1.2rem;
+            position: fixed;
+            max-width: 30vw;
+            width: 25vw;
+            background-color: $white;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+            top: 13vh;
+        }
+    }
+}

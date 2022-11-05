@@ -1,0 +1,55 @@
+@import "sys/vars.scss";
+@import "sys/media-mixins";
+@import "sys/typography";
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    //
+    ////@include media-breakpoint-up($sm) {
+    ////    font-size: calc(100vw / 768 * 8);
+    ////}
+    //
+    //@include media-breakpoint-up($md) {
+    //    font-size: 15px;;
+    //}
+    //
+    //@include media-breakpoint-up($lg) {
+    //    font-size: 16px;
+    //}
+    //
+    ////@include media-breakpoint-up($xl) {
+    ////    font-size: calc(100vw / 1400 * 8);
+    ////}
+}
+
+body {
+    background-color: $background;
+}
+
+.title {
+    color: $black;
+
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+    @include header-1;
+}
+
+a {
+    color: $black;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 20;
+}
+
+// блоки
+@import "blocks/nav";
+@import "blocks/main-card";
+@import "blocks/article";
+@import "blocks/contents";
+@import "blocks/popular";

@@ -1,0 +1,121 @@
+/* main card */
+.main__card {
+    position: relative;
+
+    // фотография на фоне
+    img {
+        width: 100%;
+    }
+
+    // подпись в левом вехнем углу
+    h3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-color: $accent;
+        padding: 0.875rem 1.5rem;
+        color: $white;
+        @include button;
+    }
+
+    // контейнер для тегов
+    div {
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+        gap: 0.5rem;
+        color: $white;
+        width: 100%;
+
+        justify-content: left;
+        margin-left: 0;
+        @include text-tag;
+
+        @include media-breakpoint-up($md) {
+            justify-content: right;
+            margin-left: -1.5rem;
+        }
+    }
+
+    // тег
+    div span {
+        padding: 0.5rem;
+        background-color: $accent;
+    }
+
+    // текст тега
+    span a {
+        color: $white;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            cursor: pointer;
+            border-bottom: 1px solid $white;
+        }
+
+        @include text-articles;
+
+        &+& {
+            margin-left: 0.5rem;
+
+            @include media-breakpoint-up($md) {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+/* информация под карточкой */
+.main__card-note {
+    margin-top: 1.25rem;
+    color: $grey;
+
+    display: grid;
+
+    // аватар
+    img {
+        border-radius: 100%;
+        grid-area: avatar;
+    }
+
+    // имя автора
+    p {
+        grid-area: author;
+    }
+
+    // дата публикации
+    time {
+        grid-area: date;
+    }
+
+    // время прочтения
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        grid-area: time;
+        text-align: right;
+        width: 100%;
+    }
+
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 4.375rem repeat(4, 1fr);
+    grid-template-areas:
+        "avatar author author author author"
+        "avatar date   time   time   time";
+    align-items: center;
+    justify-items: stretch;
+
+    // adaptive
+    @include text-small;
+
+    @include media-breakpoint-up($md) {
+        grid-template-areas:
+            "avatar author author time   time"
+            "avatar date   date   date   date";
+    }
+}
