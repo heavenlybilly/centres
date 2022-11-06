@@ -1,5 +1,16 @@
 /* -------- НАВИГАЦИЯ: хлебные крошки -------- */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0;
 
+    a {
+        text-decoration: none;
+    }
+}
 
 .breadcrumb {
     background-color: transparent;

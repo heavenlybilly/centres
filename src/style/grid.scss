@@ -95,6 +95,7 @@ nav {
         display: grid;
         grid-row: main-sidebar;
         grid-column: sidebar;
+        overflow: inherit;
 
         min-height: 100%;
         align-content: start;

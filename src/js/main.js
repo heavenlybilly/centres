@@ -26,7 +26,7 @@ document.addEventListener('scroll', function () {
     ui.arrayTitles.some(title => {
         const topTitle = title.getBoundingClientRect().top;
 
-        if (topTitle <= 400) {
+        if (topTitle <= ui.contentsRoot.offsetHeight) {
             ui.links.forEach(link => {
                 link.classList.remove('active');
             });

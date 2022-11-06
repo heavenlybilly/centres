@@ -3,6 +3,7 @@
 @import "sys/typography";
 
 html {
+    overflow: inherit;
     scroll-behavior: smooth;
     font-size: 16px;
     //

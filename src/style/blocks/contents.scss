@@ -98,22 +98,14 @@
 /* фиксированное содержание при прокручивании */
 .contents[data-scroll="1"] {
     @include media-breakpoint-up($lg) {
-        /* общий отступ списка */
-        //padding-left: 1rem;
+        margin-top: 0;
+        z-index: 99;
+        padding: 1.2rem;
+        position: sticky!important;
 
-        position: relative;
-        width: 100%;
+        background-color: $white;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-        ul[data-type="root"] {
-            z-index: 1000;
-            padding: 1.2rem;
-            position: fixed;
-            max-width: 30vw;
-            width: 25vw;
-            background-color: $white;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
-            top: 13vh;
-        }
+        top: 10vh;
     }
 }
