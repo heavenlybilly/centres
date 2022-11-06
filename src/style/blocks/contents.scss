@@ -1,7 +1,6 @@
 /* СОЖЕРЖАНИЕ + общие стили */
 .contents {
     margin-top: 6vh;
-    max-width: 100%;
 
     @include media-breakpoint-up($lg) {
         margin-top: 0;
@@ -100,7 +99,7 @@
 .contents[data-scroll="1"] {
     @include media-breakpoint-up($lg) {
         /* общий отступ списка */
-        padding-left: 1rem;
+        //padding-left: 1rem;
 
         position: relative;
         width: 100%;
