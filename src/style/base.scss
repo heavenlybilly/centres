@@ -48,10 +48,19 @@ a {
             'opsz' 20;
 }
 
+.button-up {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @import "ui/button";
 @import "ui/section";
 @import "ui/card";
+@import "ui/card";
+@import "ui/input";
 
 // блоки
 @import "blocks/nav";
@@ -61,5 +70,6 @@ a {
 @import "blocks/popular";
 @import "blocks/interest";
 @import "blocks/similar";
+@import "blocks/subscript";
 
 @import "grid";

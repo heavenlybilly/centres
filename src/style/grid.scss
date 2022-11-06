@@ -14,7 +14,8 @@
             [similar] auto
             [subscript] auto
             [popular] auto
-            [interest] auto;
+            [interest] auto
+            [button-up] auto;
 }
 
 .main {
@@ -53,6 +54,10 @@ nav {
 .interest {
     grid-row: interest;
 }
+.button-up {
+    grid-row: button-up;
+    justify-self: end;
+}
 
 // декстоп
 @include media-breakpoint-up($lg) {
@@ -65,7 +70,8 @@ nav {
         grid-template-rows:
                 [nav] auto
                 [main-sidebar] auto
-                [similar] auto;
+                [similar] auto
+                [button-up] auto;
     }
 
     nav {
@@ -125,7 +131,11 @@ nav {
         grid-column: 1 / -1;
     }
 
-
+    .button-up {
+        grid-row: button-up;
+        grid-column: 1 / -1;
+        justify-self: end;
+    }
 
 
 

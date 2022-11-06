@@ -4,6 +4,8 @@
     text-transform: uppercase;
     padding: 1rem 1.5rem;
     background-color: $orange;
+    outline: none;
+    border: none;
 
     &:hover {
         background-color: $orange-dark;

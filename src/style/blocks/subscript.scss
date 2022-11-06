@@ -1,0 +1,48 @@
+.subscript {
+    background-color: $white;
+    border: 1rem solid $accent;
+    padding: 2rem 1.5rem;
+}
+
+.subscript__title {
+    color: $black;
+
+    em {
+        font-style: inherit;
+        color: $accent;
+    }
+}
+
+.subscript form {
+    margin-top: 2rem;
+
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+            "name"
+            "email"
+            "submit";
+
+    @include media-breakpoint-up($md) {
+        grid-template-areas: "name email submit";
+    }
+
+    @include media-breakpoint-up($lg) {
+        grid-template-areas:
+            "name"
+            "email"
+            "submit";
+    }
+}
+
+.subscript .input[name="name"] {
+    grid-area: name;
+}
+
+.subscript .input[name="email"] {
+    grid-area: email;
+}
+
+.subscript .input[type="submit"] {
+    grid-area: submit;
+}
