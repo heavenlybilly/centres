@@ -2,6 +2,14 @@
     width: 100%;
 }
 
+.similar__title {
+    text-align: left;
+
+    @include media-breakpoint-up($lg) {
+        text-align: center;
+    }
+}
+
 // стили carousel
 .similar {
     .carousel {

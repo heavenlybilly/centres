@@ -16,3 +16,9 @@ $xxl: 1400px;
         @content;
     }
 }
+
+@mixin media-breakpoint-between($start, $end) {
+    @media (min-width:$start) and (max-width:calc($end - 1px)) {
+        @content;
+    }
+}

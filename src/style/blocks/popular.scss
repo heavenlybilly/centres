@@ -126,7 +126,10 @@
         right: inherit;
         top: inherit;
         bottom: 1.0rem;
-        left: 1.5rem;
+
+        @include media-breakpoint-up($lg) {
+            left: 1.5rem;
+        }
 
         display: flex;
         gap: 0.5rem;

@@ -4,21 +4,29 @@
     padding: 1rem;
     background-color: $grey-light;
 
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-family: 'Inter';
+    font-style: normal;
     font-weight: 400;
 
     border: 1px solid transparent;
 
     &::placeholder {
         color: $grey;
+        font-size: 1rem;
+        font-family: 'Inter';
+    }
+    &::-moz-placeholder {
+        color: $grey;
+        font-size: 1rem;
+        font-family: 'Inter';
     }
 
     &:active, &:focus {
         border: 1px solid $accent;
     }
 
-    &:invalid {
+    &:not([value=""]):not(:focus):invalid{
         border: 1px solid $orange-dark;
     }
 }

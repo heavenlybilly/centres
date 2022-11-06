@@ -71,7 +71,7 @@
 
     h3 {
         grid-area: title;
-        align-self: center;
+        align-self: start;
 
         @include media-breakpoint-up($lg) {
             align-self: start;

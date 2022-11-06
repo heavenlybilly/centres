@@ -2,6 +2,13 @@
     background-color: $white;
     border: 1rem solid $accent;
     padding: 2rem 1.5rem;
+
+    @include media-breakpoint-between($md, $lg) {
+        width: 100vw;
+        position: relative;
+        margin-left: -50vw;
+        left: 50%;
+    }
 }
 
 .subscript__title {
