@@ -1,24 +1,24 @@
 /* СОЖЕРЖАНИЕ + общие стили */
 .contents {
-    margin-top: 6vh;
+    margin-top: 3rem;
 
     @include media-breakpoint-up($lg) {
         margin-top: 0;
     }
 
-    li {
+    .contents__item {
         display: block;
         @include text;
     }
 
     // номера
-    li:before {
+    .contents__item:before {
         //margin-right: 0.8rem;
         padding: 0.3rem 0.8rem;
         color: $accent;
         text-decoration: underline;
     }
-    li[class="active"] {
+    li[data-type="active"] {
         @include header-4;
 
         &:before {
@@ -26,7 +26,7 @@
             background-color: $accent;
         }
     }
-    li:hover {
+    .contents__item:hover {
         cursor: pointer;
 
         &:before {
@@ -36,27 +36,24 @@
 }
 
 /* заголовок содержания */
-.contents h3 {
+.contents__title {
     margin-bottom: 2rem;
-
-    @include header-2;
-    font-family: 'Inter';
-    text-transform: uppercase;
-    color: $accent;
+    text-align: left;
 }
 
 
 /* отступы */
-.contents ul[data-type="root"] {
+.contents__list {
     /* общий отступ списка */
     padding-left: 0;
+    margin-top: 0;
 
     /* отступ текста от края списка */
-    li {
+    .contents__item {
         position: relative;
-        padding-left: 3rem;
+        padding-left: 2.8rem;
     }
-    ul > li {
+    .contents__item--sub {
         padding-left: 3.5rem;
     }
 
@@ -68,17 +65,16 @@
     }
 
     /* взаимное расположение элементов списка по вертикали */
-    li + li, ul > li:first-child {
+    .contents__item + .contents__item, .contents__item--sub:first-child {
         margin-top: 0.6rem;
     }
 
     /* отступы подсписков */
-    ul {
+    .contents__list--sub {
         padding-left: 0;
         margin-left: 0;
     }
 }
-
 
 /* нумерация */
 .contents {

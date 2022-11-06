@@ -1,0 +1,12 @@
+.section {
+    margin-top: 4.5rem;
+}
+
+// заголовок
+.section__title {
+    @include header-2;
+    color: $accent;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    text-align: center;
+}

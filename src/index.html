@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
 </head>
 <body>
     <!-- Шапка from pld24 -->
@@ -240,9 +241,10 @@
                 <section class="main__card">
                     <div class="main__card-img">
                         <img width="715" src="./images/main-card.png" alt="Офисные помещения">
-                        <h3>Офисные помещения</h3>
+                        <a href="#" class="card__label">
+                            <span>Офисные помещения</span>
+                        </a>
                         <div>
-                            <!-- span нужны исключительно для стилизации (border-bottom при наведении) -->
                             <span><a href="">#бизнес центры</a></span>
                             <span><a href="">#офисы</a></span>
                         </div>
@@ -252,9 +254,9 @@
                         <p>Автор: Федор Бондарчук</p>
                         <time>24.02.2022</time>
                         <span>
-                        <i class="material-symbols-outlined mr-2">schedule</i>
-                        Время чтения: 5 минут
-                    </span>
+                            <i class="material-symbols-outlined mr-2">schedule</i>
+                            Время чтения: 5 минут
+                        </span>
                     </div>
                 </section>
 
@@ -348,64 +350,90 @@
 
             <aside class="sidebar">
                 <!-- CONTENTS -->
-                <section class="contents">
-                    <ul data-type="root">
-                        <h3>Содержимое статьи:</h3>
-                        <li><a href="#article-title-id-dominion-tower">Бизнес-центр Dominion Tower</a></li>
-                        <li><a href="#article-title-id-white-square">Бизнес-центр «Белая площадь»</a></li>
-                        <li><a href="#article-title-id-nice-design">Для чего бизнес-центрам хороший дизайн</a>
-                            <ul>
-                                <li><a href="#article-title-modern-business">Современный бизнес</a></li>
-                                <li><a href="#article-title-id-design-importance">Важность дизайна</a></li>
+                <section class="section contents">
+                    <h3 class="section__title contents__title">Содержимое статьи:</h3>
+
+                    <ul class="contents__list">
+                        <li class="contents__item"><a href="#article-title-id-dominion-tower">Бизнес-центр Dominion Tower</a></li>
+                        <li class="contents__item"><a href="#article-title-id-white-square">Бизнес-центр «Белая площадь»</a></li>
+                        <li class="contents__item"><a href="#article-title-id-nice-design">Для чего бизнес-центрам хороший дизайн</a>
+                            <ul class="contents__list--sub">
+                                <li class="contents__item contents__item--sub"><a href="#article-title-modern-business">Современный бизнес</a></li>
+                                <li class="contents__item contents__item--sub"><a href="#article-title-id-design-importance">Важность дизайна</a></li>
                             </ul>
                         </li>
                     </ul>
                 </section>
 
                 <!-- POPULAR -->
-                <div class="popular">
-                    <h3>Популярное</h3>
+                <div class="section popular">
+                    <h3 class="section__title popular__title">Популярное</h3>
                     <div class="carousel">
                         <div class="carousel__slide">
-                            <div class="popular-item">
-                                <img width="76" src="./images/img-1.png" alt="">
-                                <h4>Классификация бизнес-центров от А до Я</h4>
-                                <p>По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
-                                    для постоянного проживания, растёт.</p>
-                                <time>24.02.2022</time>
-                                <a href="">Читать<span class="material-symbols-outlined">south_east</span></a>
+                            <div class="popular__item">
+                                <img class="popular__item-img" width="76" src="./images/img-1.png" alt="">
+                                <h4 class="popular__item-label" >Классификация бизнес-центров от А до Я</h4>
+                                <p class="popular__item-text">По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
+                                    для постоянного проживания, растёт.
+                                </p>
+                                <time class="popular__item-date">24.02.2022</time>
+                                <a class="button-link popular__item-link" href="">
+                                    Читать
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
                             </div>
-                            <div class="popular-item">
-                                <img width="76" src="./images/img-2.png" alt="">
-                                <h4>Топ-10 дизайнерских бизнес-центров Москвы</h4>
-                                <p>По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
-                                    для постоянного проживания, растёт.</p>
-                                <time>02.04.2022</time>
-                                <a href="">Читать<span class="material-symbols-outlined">south_east</span></a>
+                            <div class="popular__item">
+                                <img class="popular__item-img" width="76" src="./images/img-2.png" alt="">
+                                <h4 class="popular__item-label">Топ-10 дизайнерских бизнес-центров Москвы</h4>
+                                <p class="popular__item-text">
+                                    По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
+                                    для постоянного проживания, растёт.
+                                </p>
+                                <time class="popular__item-date">02.04.2022</time>
+                                <a class="button-link popular__item-link" href="">
+                                    Читать
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
                             </div>
-                            <div class="popular-item">
-                                <img width="76" src="./images/img-3.png" alt="">
-                                <h4>Фабрики и лофты: офисы в мануфактурах Москвы</h4>
-                                <p>По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
-                                    для постоянного проживания, растёт.</p>
-                                <time>17.06.2022</time>
-                                <a href="">Читать<span class="material-symbols-outlined">south_east</span></a>
+                            <div class="popular__item">
+                                <img class="popular__item-img" width="76" src="./images/img-3.png" alt="">
+                                <h4 class="popular__item-label">Фабрики и лофты: офисы в мануфактурах Москвы</h4>
+                                <p class="popular__item-text">
+                                    По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
+                                    для постоянного проживания, растёт.
+                                </p>
+                                <time class="popular__item-date">17.06.2022</time>
+                                <a class="button-link popular__item-link" href="">
+                                    Читать
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
                             </div>
-                            <div class="popular-item">
-                                <img width="76" src="./images/img-4.png" alt="">
-                                <h4>Топ-10 дизайнерских бизнес-центров Москвы</h4>
-                                <p>По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
-                                    для постоянного проживания, растёт.</p>
-                                <time>28.08.2022</time>
-                                <a href="">Читать<span class="material-symbols-outlined">south_east</span></a>
+                            <div class="popular__item">
+                                <img class="popular__item-img" width="76" src="./images/img-4.png" alt="">
+                                <h4 class="popular__item-label">
+                                    Топ-10 дизайнерских бизнес-центров Москвы</h4>
+                                <p class="popular__item-text">
+                                    По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
+                                    для постоянного проживания, растёт.
+                                </p>
+                                <time class="popular__item-date">28.08.2022</time>
+                                <a class="button-link popular__item-link" href="">
+                                    Читать
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
                             </div>
-                            <div class="popular-item">
-                                <img width="76" src="./images/img-5.png" alt="">
-                                <h4>Классификация бизнес-центров от А до Я</h4>
-                                <p>По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
-                                    для постоянного проживания, растёт.</p>
-                                <time>06.09.2022</time>
-                                <a href="">Читать<span class="material-symbols-outlined">south_east</span></a>
+                            <div class="popular__item">
+                                <img class="popular__item-img" width="76" src="./images/img-5.png" alt="">
+                                <h4 class="popular__item-label">Классификация бизнес-центров от А до Я</h4>
+                                <p class="popular__item-text">
+                                    По данным последних опросов, спрос на жилую загородную недвижимость Подмосковья, которая рассматривается
+                                    для постоянного проживания, растёт.
+                                </p>
+                                <time class="popular__item-date">06.09.2022</time>
+                                <a class="button-link popular__item-link" href="">
+                                    Читать
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
                             </div>
                         </div>
                         <div class="carousel__slide">
@@ -418,99 +446,171 @@
                 </div>
 
                 <!-- INTEREST -->
-                <section class="interest">
-                    <h3>Возможно вас заинтересует</h3>
-                    <div class="interest-tags">
-                        <a href="">
-                            <p>#торговыездания</p>
-                            <span>4 статьи<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#офисы</p>
-                            <span>5 статей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#жилаянедвижимость</p>
-                            <span>6 статей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#участки</p>
-                            <span>2 статьи<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#новостройки</p>
-                            <span>5 статей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#жилищныекомплексы</p>
-                            <span>5 статей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#многоквартирныедома</p>
-                            <span>6 статей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
-                        <a href="">
-                            <p>#частныедома</p>
-                            <span>7 статьей<i class="material-symbols-outlined">south_east</i></span>
-                        </a>
+                <section class="section interest">
+                    <h3 class="section__title">Возможно вас заинтересует</h3>
+                    <div class="interest__tags">
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#торговыездания</p>
+                            <a class="button-link interest__tag-link" href="">
+                                4 статьи
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#офисы</p>
+                            <a class="button-link interest__tag-link" href="">
+                                5 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#жилаянедвижимость</p>
+                            <a class="button-link interest__tag-link" href="">
+                                6 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#участки</p>
+                            <a class="button-link interest__tag-link" href="">
+                                2 статьи
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#новостройки</p>
+                            <a class="button-link interest__tag-link" href="">
+                                5 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#жилищныекомплексы</p>
+                            <a class="button-link interest__tag-link" href="">
+                                5 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#многоквартирныедома</p>
+                            <a class="button-link interest__tag-link" href="">
+                                6 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
+                        <div class="interest__tag">
+                            <p class="interest__tag-text">#частныедома</p>
+                            <a class="button-link interest__tag-link" href="">
+                                7 статьей
+                                <i class="material-symbols-outlined">south_east</i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="interest-all"><a class="button" href="">Посмотреть все</a></div>
+                    <div class="interest__all">
+                        <a class="button" href="">Посмотреть все</a>
+                    </div>
                 </section>
 
                 <!-- SUBSCRIPT -->
-                <section class="subscript">
+                <section class="section subscript">
                 </section>
 
             </aside>
 
             <!-- SIMILAR -->
-            <section class="similar">
-                <h3>Похожие статьи</h3>
+            <section class="section similar">
+                <h3 class="section__title">Похожие статьи</h3>
 
-                <div class="similar__item">
-                    <img src="./images/sm1.png" alt="">
-                    <h4>Офисные помещения</h4>
-                    <div>
-                        <h5>Фабрики и лофты: офисы в мануфактурах Москвы</h5>
-                        <time>24.02.2022</time>
-                        <span>Автор: Фёдор Бондарчук</span>
-                        <p>По данным последних опросов, спрос
-                            на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.</p>
-                        <a href="">Читать полностью<i class="material-symbols-outlined">south_east</i></a>
+                <div class="carousel">
+                    <div class="carousel__slide">
+                        <div class="card">
+                            <img class="card__img" src="./images/sm1.png" alt="">
+                            <a href="#" class="card__label">
+                                <span>Офисные помещения</span>
+                            </a>
+                            <div class="card__body">
+                                <h5 class="card__body-title">Фабрики и лофты: офисы в мануфактурах Москвы</h5>
+                                <time class="card__body-date">24.02.2022</time>
+                                <p class="card__body-author">Автор: Фёдор Бондарчук</p>
+                                <p class="card__body-text">
+                                    По данным последних опросов, спрос
+                                    на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.
+                                </p>
+                                <a class="button-link card__body-link" href="">
+                                    Читать полностью
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="similar__item">
-                    <img src="./images/sm2.png" alt="">
-                    <h4>торговые здания</h4>
-                    <div>
-                        <h5>Фабрики и лофты: офисы в мануфактурах Москвы</h5>
-                        <time>24.02.2022</time>
-                        <span>Автор: Фёдор Бондарчук</span>
-                        <p>По данным последних опросов, спрос
-                            на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.</p>
-                        <a href="">Читать полностью<i class="material-symbols-outlined">south_east</i></a>
+                    <div class="carousel__slide">
+                        <div class="card">
+                            <img class="card__img" src="./images/sm2.png" alt="">
+                            <a href="#" class="card__label">
+                                <span>Офисные помещения</span>
+                            </a>
+                            <div class="card__body">
+                                <h5 class="card__body-title">Фабрики и лофты: офисы в мануфактурах Москвы</h5>
+                                <time class="card__body-date">24.02.2022</time>
+                                <p class="card__body-author">Автор: Фёдор Бондарчук</p>
+                                <p class="card__body-text">
+                                    По данным последних опросов, спрос
+                                    на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.
+                                </p>
+                                <a class="button-link card__body-link" href="">
+                                    Читать полностью
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="similar__item">
-                    <img src="./images/sm3.png" alt="">
-                    <h4>жилые дома</h4>
-                    <div>
-                        <h5>Фабрики и лофты: офисы в мануфактурах Москвы</h5>
-                        <time>24.02.2022</time>
-                        <span>Автор: Фёдор Бондарчук</span>
-                        <p>По данным последних опросов, спрос
-                            на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.</p>
-                        <a href="">Читать полностью<i class="material-symbols-outlined">south_east</i></a>
+                    <div class="carousel__slide">
+                        <div class="card">
+                            <img class="card__img" src="./images/sm3.png" alt="">
+                            <a href="#" class="card__label">
+                                <span>Офисные помещения</span>
+                            </a>
+                            <div class="card__body">
+                                <h5 class="card__body-title">Фабрики и лофты: офисы в мануфактурах Москвы</h5>
+                                <time class="card__body-date">24.02.2022</time>
+                                <p class="card__body-author">Автор: Фёдор Бондарчук</p>
+                                <p class="card__body-text">
+                                    По данным последних опросов, спрос
+                                    на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.
+                                </p>
+                                <a class="button-link card__body-link" href="">
+                                    Читать полностью
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="card">
+                            <img class="card__img" src="./images/sm3.png" alt="">
+                            <a href="#" class="card__label">
+                                <span>Офисные помещения</span>
+                            </a>
+                            <div class="card__body">
+                                <h5 class="card__body-title">Фабрики и лофты: офисы в мануфактурах Москвы</h5>
+                                <time class="card__body-date">24.02.2022</time>
+                                <p class="card__body-author">Автор: Фёдор Бондарчук</p>
+                                <p class="card__body-text">
+                                    По данным последних опросов, спрос
+                                    на жилую загородную недвижимость Подмосковья, которая рассматривается для постоянного проживания, растёт.
+                                </p>
+                                <a class="button-link card__body-link" href="">
+                                    Читать полностью
+                                    <i class="material-symbols-outlined">south_east</i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
         </div>
     </div>
-
-
 
     <!-- Футер from pld24 -->
     <footer class="mt-5">

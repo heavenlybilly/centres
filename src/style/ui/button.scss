@@ -1,0 +1,29 @@
+.button {
+    @include button;
+    color: $white;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    background-color: $orange;
+
+    &:hover {
+        background-color: $orange-dark;
+        color: $white;
+        cursor: default;
+    }
+}
+
+// кнопка-ссылка, со стрелочкой справа
+.button-link {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $orange;
+    @include button;
+
+    &:hover {
+        color: $orange-dark;
+    }
+}

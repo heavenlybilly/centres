@@ -7,6 +7,8 @@ const ui = {
 
 ui.arrayTitles = [...ui.titles].slice().reverse();
 
+console.log(ui)
+
 /**
  *  поведение "содержания" при прокрутке страницы
  */
@@ -18,7 +20,7 @@ document.addEventListener('scroll', function () {
     } else {
         ui.contentsRoot.removeAttribute('data-scroll');
         ui.links.forEach(link => {
-            link.classList.remove('active');
+            link.removeAttribute('data-type');
         });
     }
 
@@ -26,17 +28,17 @@ document.addEventListener('scroll', function () {
     ui.arrayTitles.some(title => {
         const topTitle = title.getBoundingClientRect().top;
 
-        if (topTitle <= ui.contentsRoot.offsetHeight) {
+        if (topTitle <= ui.contentsRoot.offsetHeight + 50) {
             ui.links.forEach(link => {
-                link.classList.remove('active');
+                link.removeAttribute('data-type');
             });
 
-            ui.contentsRoot.querySelector(`li a[href="#${title.id}"]`).closest('li').classList.add('active');
+            ui.contentsRoot.querySelector(`li a[href="#${title.id}"]`).closest('li').setAttribute('data-type', 'active');
             return true;
         }
 
         ui.links.forEach(link => {
-            link.classList.remove('active');
+            link.removeAttribute('data-type');
         });
         return false;
     });
@@ -46,7 +48,13 @@ document.addEventListener('scroll', function () {
 /**
  * carousel
  */
-const myCarousel = new Carousel(document.querySelector(".carousel"), {
+const popularCarousel = new Carousel(document.querySelector(".popular .carousel"), {
     'center' : true,
     'slidesPerPage' : 1
+});
+
+
+const similarCarousel = new Carousel(document.querySelector(".similar .carousel"), {
+    'center' : true,
+    'slidesPerPage': 'auto',
 });

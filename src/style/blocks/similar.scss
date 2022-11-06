@@ -1,128 +1,53 @@
 .similar {
-    margin-top: 4.5rem;
     width: 100%;
 }
 
-.similar h3 {
-    @include header-2;
-    color: $accent;
-    text-transform: uppercase;
-    font-family: 'Inter';
-    text-align: left;
-    margin-bottom: 3.5rem;
-
-    @include media-breakpoint-up($lg) {
-        text-align: center;
-    }
-}
-
-.similar img {
-    width: 100%;
-}
-
+// стили carousel
 .similar {
-    @include media-breakpoint-up($lg) {
-        display: grid;
-        gap: 2.25rem;
-        grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr 1fr;
-
-        h3 {
-            grid-row: 1;
-            grid-column: 1 / -1;
-        }
-    }
-}
-
-.similar__item {
-    position: relative;
-    background-color: #000;
-
-    h4 {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        background-color: $accent;
-        padding: 0.875rem 1.5rem;
-        color: $white;
-        @include button;
+    .carousel {
+        margin-top: 1.625rem;
+        min-width: 100%;
     }
 
-    @include media-breakpoint-up($lg) {
-        box-shadow: 7px 7px 0 0 $orange, 14px 14px 0 0 $orange-light;
-        transition: all 0.55s ease-in-out;
+    .carousel__slide {
+        max-width: 100%;
 
-        img {
-            transition: all 0.55s ease-in-out;
+        @include media-breakpoint-up($md) {
+            max-width: 50%;
         }
 
-        &:hover {
-            box-shadow: none;
-
-            img {
-                opacity: 0.6;
-            }
+        @include media-breakpoint-up($lg) {
+            max-width: 33.33%;
         }
     }
-}
 
-//  GRID
-.similar__item div {
-    padding: 1.5rem;
-    background: $white;
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(-121deg, transparent 62px, $white 63px);
-    //clip-path: polygon(0 0, 70% 0, 100% 47%, 100% 100%, 0 100%);
-
-    display: grid;
-    grid-gap: 1rem;
-
-    grid-template-areas:
-            "title"
-            "author"
-            "date"
-            "text"
-            "link";
-
-    @include media-breakpoint-up($lg) {
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas:
-            "title title"
-            "date  author"
-            "text  text"
-            "link  link";
-    }
-
-    h5 {
-        grid-area: title;
-        @include header-4;
-        margin-right: 2rem;
-    }
-    time {
-        grid-area: date;
-        @include text-small;
-        color: $grey;
-    }
-    span {
-        grid-area: author;
-        @include text-small;
-        color: $grey;
-    }
-    p {
-        grid-area: text;
-        @include text-articles;
-    }
-    a {
-        grid-area: link;
+    .carousel__dots {
         display: flex;
-        align-items: center;
-        justify-content: start;
         gap: 0.5rem;
-        font-weight: 500;
-        text-transform: uppercase;
+        justify-content: center;
 
-        color: $orange;
+        .is-selected:after {
+            background-color: $orange;
+            width: 0.625rem;
+            height: 0.625rem;
+        }
+        .carousel__dot {
+            max-width: 0.625rem;
+        }
+        .carousel__dot:after {
+            background-color: $orange-light;
+            min-width: 0.5rem;
+            min-height: 0.5rem;
+        }
+    }
+
+    .carousel__nav {
+        display: none;
+    }
+
+    .carousel__track > .carousel__slide {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
     }
 }
