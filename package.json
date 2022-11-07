@@ -7,9 +7,18 @@
     "prod": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js"
   },
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.3.0",
     "css-loader": "^6.7.1",
@@ -17,6 +26,8 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^6.0.1",
+    "postcss": "^8.4.18",
+    "postcss-loader": "^7.0.1",
     "sass": "^1.55.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

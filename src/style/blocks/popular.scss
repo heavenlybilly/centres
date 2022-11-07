@@ -36,7 +36,7 @@
         "img link";
 
     .popular__item-link {
-        justify-content: start;
+        justify-content: flex-start;
     }
     .popular__item-text {
         display: none;
@@ -67,7 +67,7 @@
             display: none;
         }
         .popular__item-link {
-            justify-content: end;
+            justify-content: flex-end;
         }
     }
 }
@@ -138,7 +138,7 @@
 
         display: flex;
         gap: 0.5rem;
-        justify-content: start;
+        justify-content: flex-start;
 
         .is-selected:after {
             background-color: $orange;

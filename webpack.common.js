@@ -27,7 +27,30 @@ module.exports = {
                 use: [
                     "style-loader",
                     "css-loader",
-                    "sass-loader"
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                        {
+                                            path: 'postcss.config.js'
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                            sassOptions: {
+                                outputStyle: "expanded",
+                            },
+                        },
+                    },
                 ],
             },
             {
