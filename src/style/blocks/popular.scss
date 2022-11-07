@@ -107,17 +107,22 @@
 .popular {
     .carousel {
         padding-top: 1.5rem;
-        display: flex;
+        display: grid;
+        //min-width: 100%;
     }
 
-    // static чтобы все абсолютные элдементы позиционировались относительно .popular
+    // static чтобы можно было настроить положение дотсов и кнопок
     .carousel, .carousel__nav {
         position: static;
     }
 
     // страница
     .carousel__slide {
-        padding: 0;
+        padding: 0 0.1rem;
+
+        div {
+            max-width: 100%;
+        }
     }
 
     // точки

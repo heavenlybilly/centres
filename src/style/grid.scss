@@ -1,7 +1,35 @@
+/* сетка макета */
 .grid {
     display: grid;
     align-items: start;
     justify-items: start;
+
+    // учет хедера при прокрутке
+    margin-top: 5.93rem;
+
+    // костыль из-за нелинейно изменяющегося размера хедера
+    /* выпадает пункт меню */
+    @include media-breakpoint-up(482px) {
+        margin-top: 10.18rem;
+    }
+
+    /* возвращается на место */
+    @include media-breakpoint-up(494px) {
+        margin-top: 8rem;
+    }
+
+    @include media-breakpoint-up($md) {
+        margin-top: 5.87rem;
+    }
+
+    /* выпадает адрес и контакты в хедере */
+    @include media-breakpoint-up(822px) {
+        margin-top: 8.75rem;
+    }
+
+    @include media-breakpoint-up(992px) {
+        margin-top: 5.87rem;
+    }
 }
 
 // мобилка и планшет

@@ -15,29 +15,6 @@
 .breadcrumb {
     background-color: transparent;
     padding: 0;
-    margin-top: 0;
-
-    /* выпадает аункт меню */
-    @include media-breakpoint-up(482px) {
-        margin-top: 4rem;
-    }
-
-    //@include media-breakpoint-up(494px) {
-    //    margin-top: 15vh;
-    //}
-    //
-    @include media-breakpoint-up($md) {
-        margin-top: 0;
-    }
-
-    /* вырадает адрес и контакты в хедере */
-    @include media-breakpoint-up(822px) {
-        margin-top: 3rem;
-    }
-
-    @include media-breakpoint-up(1400px) {
-        margin-top: 0;
-    }
 }
 
 /* элементы навигации, общие стили */

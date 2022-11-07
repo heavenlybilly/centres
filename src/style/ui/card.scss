@@ -1,6 +1,7 @@
 .card {
     position: relative;
     border: none;
+    border-radius: 0;
 
     @include media-breakpoint-up($lg) {
         box-shadow: 7px 7px 0 0 $orange, 14px 14px 0 0 $orange-light;
@@ -102,6 +103,10 @@
     grid-area: title;
     margin-right: 2rem;
     @include header-4;
+
+    &:hover {
+        color: $orange;
+    }
 }
 .card__body-author {
     grid-area: author;

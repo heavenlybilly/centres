@@ -31,6 +31,15 @@
 
     @include text-articles;
     color: $white;
+
+    &:hover {
+        color: $white;
+        cursor: pointer;
+
+        .interest__tag-link {
+            color: $orange-dark;
+        }
+    }
 }
 
 .interest__tag-text {
@@ -43,10 +52,6 @@
     @include text-small;
     background-color: $white;
 
-    &:hover {
-        color: $orange-dark;
-        cursor: pointer;
-    }
     i {
         color: $orange-dark;
     }

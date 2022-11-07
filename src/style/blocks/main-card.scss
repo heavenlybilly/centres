@@ -42,31 +42,24 @@
     }
 
     // тег
-    div span {
+    div a {
+        display: block;
         padding: 0.5rem;
         background-color: $accent;
+
+        &:hover span {
+            cursor: pointer;
+            border-bottom: 1px solid $white;
+        }
     }
 
     // текст тега
-    span a {
+    a span {
         color: $white;
         padding-bottom: 0.25rem;
         border-bottom: 1px solid transparent;
 
-        &:hover {
-            cursor: pointer;
-            border-bottom: 1px solid $white;
-        }
-
         @include text-articles;
-
-        &+& {
-            margin-left: 0.5rem;
-
-            @include media-breakpoint-up($md) {
-                margin-left: 1rem;
-            }
-        }
     }
 }
 

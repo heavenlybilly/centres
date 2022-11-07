@@ -7,21 +7,32 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
 
-    //@include media-breakpoint-up($sm) {
-    //    font-size: calc(100vw / 768 * 8);
-    //}
+    // учет хедера при прокрутке
+    scroll-padding-top: 5.93rem;
 
-    //@include media-breakpoint-up($md) {
-    //    font-size: 15px;;
-    //}
-    //
-    //@include media-breakpoint-up($lg) {
-    //    font-size: 16px;
-    //}
+    // костыль из-за нелинейно изменяющегося размера хедера
+    /* выпадает пункт меню */
+    @include media-breakpoint-up(482px) {
+        scroll-padding-top: 10.18rem;
+    }
 
-    ////@include media-breakpoint-up($xl) {
-    ////    font-size: calc(100vw / 1400 * 8);
-    ////}
+    /* возвращается на место */
+    @include media-breakpoint-up(494px) {
+        scroll-padding-top: 8rem;
+    }
+
+    @include media-breakpoint-up($md) {
+        scroll-padding-top: 5.87rem;
+    }
+
+    /* выпадает адрес и контакты в хедере */
+    @include media-breakpoint-up(822px) {
+        scroll-padding-top: 8.75rem;
+    }
+
+    @include media-breakpoint-up(992px) {
+        scroll-padding-top: 5.87rem;
+    }
 }
 
 body {
