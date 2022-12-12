@@ -22,7 +22,7 @@
 }
 
 /* заголовок */
-.article-title {
+.article h2 {
     color: $black;
     @include header-2;
     margin-top: 2rem;
@@ -37,13 +37,24 @@
         margin-top: 3.75rem;
         margin-bottom: 2.2rem;
     }
+}
 
-    /* подзаголовок */
-    &-sub {
-        @include header-3;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+/* подзаголовок */
+.article h3 {
+    color: $black;
+    @include header-3;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    //@include media-breakpoint-up($md) {
+    //    margin-top: 2.2rem;
+    //    margin-bottom: 2rem;
+    //}
+    //
+    //@include media-breakpoint-up($lg) {
+    //    margin-top: 3.75rem;
+    //    margin-bottom: 2.2rem;
+    //}
 }
 
 /* grid разметка*/
